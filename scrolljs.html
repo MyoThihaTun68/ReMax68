@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>scroll</title>
+        <style>
+            body {
+                background-color:#6C0000;
+            }
+            h1 {
+                text-align: center;
+            }
+            .boxes {
+                margin: auto;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+            }
+            .too {
+                background-color: #47817E;
+                border-radius: 10px;
+                box-shadow: 0px 0px 15px #0c0c0c;
+                height: 200px;
+                width: 350px;
+                margin: 50px;
+                text-align: center;
+                color: #C5C3C3;
+                font-weight: 800;
+                transform:translateX(-200%);
+                transition: transform .5s ease-in;
+               
+
+
+            }
+            .show {
+                transform: translateX(0);
+                
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Power</h1>
+        <div class="boxes">
+         <img class="too" src="https://sportshub.cbsistatic.com/i/2022/10/25/69ef9cc8-5b4f-436e-b1e6-be2a081f6bca/chainsaw-man-power-anime.jpg" alt="">
+         <img class="too" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVUFUzTOehOdGk7KNTEO6lJ6TiUa2Esn5W-b3abF0JIw570H_MXBPbZq5j4y1yeHieasE&usqp=CAU" alt="">
+         <img class="too" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDOtNlqgTrAE6MKWg4pIjZqBaWcp7CpL3chW_jUucRL-hOD2GqdpcplvEGv313US32OLo&usqp=CAU" alt="">
+         <img class="too" src="https://sportshub.cbsistatic.com/i/2021/08/09/1ba861e3-9a1c-453c-9779-109f5630f428/chainsaw-man-power-anime-1273800.jpg" alt="">
+         <img class="too" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6BY0FU3gWgaPhM9CK0KiMOb3SKf5h6jav7NrM1VyUBDjHUNGK3IISOpoaMVjNE-iBGrA&usqp=CAU" alt="">
+         <img class="too" src="https://sportshub.cbsistatic.com/i/2021/03/18/76dc9563-3269-4fee-87ed-14ce80a9848f/power-chainsaw-man-manga-tatsuki-fujimoto-1255925.jpg" alt="">
+         <img class="too" src="https://twinfinite.net/wp-content/uploads/2022/11/Chainsaw-Man-Power-Wearing-76.1-Shirt-Screenshot-1.jpg" alt="">
+         <img class="too" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5z9YZ8ahuCHYCg5l_EE_PVGPXDHbsLiedVQ&usqp=CAU" alt="">
+         <img class="too" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrwAptvFLd3RhtzzPu0PIzbH1pbyGUmfpqhw&usqp=CAU" alt="">
+        </div>
+
+        <script>
+            const box = document.querySelectorAll('.too');
+            window.addEventListener('scroll', check);
+            function check(){
+                const timimg = window.innerHeight / 5 *4;
+                box.forEach (box => {
+                    const boxTop = box.getBoundingClientRect().top
+                    if (boxTop < timimg ){
+                        box.classList.add('show');
+                    }
+                    else {
+                        box.classList.remove('show');
+                    }
+                   
+                })
+            }
+        
+        </script>
+    </body>
+</html>
